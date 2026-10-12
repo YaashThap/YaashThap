@@ -1,0 +1,387 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yaash | Engineering Portfolio</title>
+
+<style>
+:root {
+  --bg: #080b12;
+  --panel: #101622;
+  --text: #f2f5fa;
+  --muted: #98a4b8;
+  --accent: #65aaff;
+  --border: #202b3d;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: Arial, sans-serif;
+  line-height: 1.7;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 8%;
+  background: rgba(8, 11, 18, 0.92);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(12px);
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.logo span, .blue {
+  color: var(--accent);
+}
+
+.nav-links {
+  display: flex;
+  gap: 25px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.nav-links a:hover {
+  color: var(--accent);
+}
+
+section {
+  padding: 90px 8%;
+  scroll-margin-top: 65px;
+}
+
+.hero {
+  min-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  background:
+    radial-gradient(ellipse at 85% 25%, #16305755, transparent 45%),
+    var(--bg);
+}
+
+.tag {
+  color: var(--accent);
+  border: 1px solid #284c78;
+  background: #101e32;
+  padding: 5px 13px;
+  border-radius: 30px;
+  font-size: 12px;
+  letter-spacing: 1px;
+  margin-bottom: 25px;
+}
+
+h1 {
+  font-size: clamp(42px, 7vw, 78px);
+  line-height: 1.1;
+  letter-spacing: -2px;
+  max-width: 800px;
+}
+
+.hero p {
+  max-width: 580px;
+  color: var(--muted);
+  margin: 25px 0;
+  font-size: 17px;
+}
+
+.buttons {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.btn {
+  padding: 11px 20px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  transition: 0.25s;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #07101d;
+  font-weight: bold;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent);
+}
+
+.section-label {
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 12px;
+  margin-bottom: 8px;
+}
+
+h2 {
+  font-size: clamp(29px, 4vw, 42px);
+  margin-bottom: 15px;
+}
+
+.description {
+  color: var(--muted);
+  max-width: 650px;
+  margin-bottom: 35px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  padding: 25px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  border-color: #416b9e;
+}
+
+.card h3 {
+  margin: 12px 0 8px;
+  font-size: 19px;
+}
+
+.card p {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.card-icon {
+  font-size: 27px;
+}
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skill {
+  padding: 8px 14px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: #c7d8ef;
+  font-size: 14px;
+}
+
+.about-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 35px;
+  align-items: start;
+}
+
+.about-layout p {
+  color: var(--muted);
+}
+
+footer {
+  padding: 28px 8%;
+  text-align: center;
+  color: var(--muted);
+  border-top: 1px solid var(--border);
+  font-size: 13px;
+}
+
+.reveal {
+  animation: appear 0.8s ease both;
+}
+
+@keyframes appear {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 600px) {
+  nav { padding: 15px 5%; }
+  .nav-links { gap: 12px; font-size: 12px; }
+  section { padding: 65px 6%; }
+  .about-layout { grid-template-columns: 1fr; }
+  h1 { letter-spacing: -1px; }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <a href="#home" class="logo">Y<span>.</span>THAPLIYAL</a>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<section class="hero" id="home">
+  <span class="tag reveal">ENGINEERING PORTFOLIO</span>
+
+  <h1 class="reveal">
+    Building ideas.<br>
+    <span class="blue">Engineering solutions.</span>
+  </h1>
+
+  <p class="reveal">
+    I'm Yaash, an engineering student interested in mechanical
+    design, electronics and technology. This is where I document
+    what I build, what I learn and what I aim to create next.
+  </p>
+
+  <div class="buttons reveal">
+    <a href="#projects" class="btn btn-primary">Explore my work ↗</a>
+    <a href="#about" class="btn">About me</a>
+  </div>
+</section>
+
+<section id="about">
+  <div class="section-label">01 / ABOUT</div>
+  <h2>A little about me.</h2>
+
+  <div class="about-layout">
+    <p>
+      I'm currently studying engineering at Level 3, developing
+      my knowledge of engineering principles, technical design
+      and problem-solving.
+      <br><br>
+      I enjoy understanding how things work, turning concepts
+      into practical projects and learning new technologies.
+      My goal is to keep improving my skills and build projects
+      that solve real problems.
+    </p>
+
+    <div class="card">
+      <div class="section-label">CURRENT FOCUS</div>
+      <h3>Design. Build. Improve.</h3>
+      <p>
+        CAD modelling, electronics, programming and practical
+        engineering projects.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="section-label">02 / SELECTED WORK</div>
+  <h2>Projects I'm working on.</h2>
+  <p class="description">
+    A collection of engineering projects, experiments and
+    things I'm learning. I'll add more as I develop them.
+  </p>
+
+  <div class="grid">
+    <article class="card">
+      <div class="card-icon">⚙️</div>
+      <h3>CAD & Mechanical Design</h3>
+      <p>
+        Exploring 3D modelling, sketches, features and technical
+        drawings using SolidWorks.
+      </p>
+    </article>
+
+    <article class="card">
+      <div class="card-icon">⌁</div>
+      <h3>LCD Countdown Timer</h3>
+      <p>
+        Building a digital countdown timer using a Raspberry Pi
+        Pico, an I2C LCD display and MicroPython.
+      </p>
+    </article>
+
+    <article class="card">
+      <div class="card-icon">⌘</div>
+      <h3>Programming & Electronics</h3>
+      <p>
+        Learning how software interacts with hardware through
+        circuit wiring, microcontrollers and Python.
+      </p>
+    </article>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="section-label">03 / SKILLS</div>
+  <h2>What I'm developing.</h2>
+  <p class="description">
+    Skills I'm building through coursework and independent projects.
+  </p>
+
+  <div class="skills">
+    <span class="skill">SolidWorks</span>
+    <span class="skill">CAD Modelling</span>
+    <span class="skill">Technical Drawings</span>
+    <span class="skill">Python</span>
+    <span class="skill">MicroPython</span>
+    <span class="skill">Electronics</span>
+    <span class="skill">Problem Solving</span>
+    <span class="skill">Engineering Design</span>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="section-label">04 / CONTACT</div>
+  <h2>Let's connect.</h2>
+  <p class="description">
+    Interested in engineering, technology or a project?
+    Feel free to connect with me.
+  </p>
+
+  <div class="buttons">
+    <a class="btn btn-primary"
+       href="https://github.com/YaashThap"
+       target="_blank" rel="noopener">
+       GitHub ↗
+    </a>
+
+    <!-- Add your LinkedIn URL below when ready -->
+    <a class="btn"
+       href="https://www.linkedin.com/"
+       target="_blank" rel="noopener">
+       LinkedIn ↗
+    </a>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Yaash Thapliyal · Built with HTML & CSS.</p>
+</footer>
+
+</body>
+</html>
